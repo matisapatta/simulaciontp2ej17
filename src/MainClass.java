@@ -8,8 +8,9 @@ public class MainClass {
     public static void main( String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int selector,V1=0,V2=4,A=4;
-        Generador gen = new Generador();
+        int selector;
+        Generador gen;
+
 
         System.out.println("Menú:\n"
                 + "1. Método de Cuadrados Centrales\n"
@@ -20,38 +21,62 @@ public class MainClass {
 
         selector = scan.nextInt();
 
-        if(selector==1){
-            System.out.println("Ingrese semilla: ");
-            A = (scan.nextInt());
-            gen.cuadcent(A);
+        switch (selector){
+            case 1:
+                gen = new CuadCent();
+                break;
+            case 2:
+                gen = new Congruencias();
+                break;
+            case 3:
+                gen = new AdCongruencias();
+                break;
+            case 4:
+                gen = new Multiplicativo();
+                break;
+            case 5:
+                int v1,v2,a;
+
+                do {
+                    do {
+                        System.out.println("Ingrese v1: ");
+                        v1 = (scan.nextInt());
+                    } while(String.valueOf(v1).length()<3||String.valueOf(v1).length()>7);
+                } while(!isPrime(v1));
+                do {
+                    do{
+                        System.out.println("Ingrese v2: ");
+                        v2 = (scan.nextInt());
+                    } while(String.valueOf(v1).length()<3||String.valueOf(v1).length()>7);
+
+                } while(!isPrime(v2));
+                do {
+                    do{
+                        System.out.println("Ingrese A: ");
+                        a = (scan.nextInt());
+                    }while(String.valueOf(v1).length()<3||String.valueOf(v1).length()>7);
+
+                } while(!isPrime(a));
+
+                gen = new Fibonacci(v1,v2,a);
+                break;
+            default:    gen = new Fibonacci();
 
 
-        } else if(selector==2){
-            gen= new Generador();
-        } else if(selector==3){
-            gen= new Generador();
-        } else if(selector==4){
 
-        } else if(selector==5){
-            while(!gen.isPrime(V1)){
-                System.out.println("Ingrese v1: ");
-                V1 = (scan.nextInt());
-            }
-            while(!gen.isPrime(V2)){
-                System.out.println("Ingrese v2: ");
-                V2 = (scan.nextInt());
-            }
-            while(!gen.isPrime(A)){
-                System.out.println("Ingrese A: ");
-                A = (scan.nextInt());
-            }
-            gen.fibonacci(V1, V2, A);
+
         }
 
+        gen.getNext();
 
-
-
-
+    }
+    public static boolean isPrime(int n){
+        for(int i=2;i<n;i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
     }
 
 }
