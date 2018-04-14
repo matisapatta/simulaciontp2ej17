@@ -9,6 +9,7 @@ public class MainClass {
 
         Scanner scan = new Scanner(System.in);
         int selector;
+        int cant;
         Generador gen;
 
 
@@ -23,7 +24,12 @@ public class MainClass {
 
         switch (selector){
             case 1:
-                gen = new CuadCent();
+                int seed;
+                do{
+                    System.out.println("Ingrese semilla: ");
+                    seed = (scan.nextInt());
+                } while(String.valueOf(seed).length()!=2&&String.valueOf(seed).length()!=4);
+                gen = new CuadCent(seed);
                 break;
             case 2:
                 gen = new Congruencias();

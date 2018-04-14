@@ -19,17 +19,19 @@ public class Fibonacci extends Generador {
         calcular(this.v1,this.v2,this.a);
     }
 
-    public int calcular(int v1, int v2,int a){
+    public void calcular(int v1, int v2,int a){
         int k;
         if((v1+v2)<=a)
             k = 0;
         else
             k = -1;
         int v3 = (v1+v2)+k*a;
-        System.out.println(v3);
-        if (v3 != v2)
+
+        if (v3 != v2){
+            System.out.println(v3);
             calcular(v2,v3,a);
-        return 1;
+        }
+
     }
 
 }
