@@ -26,7 +26,7 @@ public class Congruencias extends Generador {
         this.max--;
         x1 = ((this.a*x)+this.c)%m;
         rand = x1/this.m;
-        if(rand!=x/this.m||this.max!=0){
+        if(!(rand==x/this.m||this.max==0)){
             System.out.println(rand);
             calcular(x1);
         }

@@ -41,7 +41,9 @@ public class MainClass {
                 gen = new AdCongruencias();
                 break;
             case 4:
-                double xm = 0;
+                double xm;
+                System.out.println("Ingrese semilla: ");
+                xm = (scan.nextInt());
                 gen = new Multiplicativo(xm);
                 break;
             case 5:
