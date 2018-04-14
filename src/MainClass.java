@@ -32,13 +32,17 @@ public class MainClass {
                 gen = new CuadCent(seed);
                 break;
             case 2:
-                gen = new Congruencias();
+                double xc;
+                System.out.println("Ingrese semilla: ");
+                xc = (scan.nextInt());
+                gen = new Congruencias(xc);
                 break;
             case 3:
                 gen = new AdCongruencias();
                 break;
             case 4:
-                gen = new Multiplicativo();
+                double xm = 0;
+                gen = new Multiplicativo(xm);
                 break;
             case 5:
                 int v1,v2,a;
