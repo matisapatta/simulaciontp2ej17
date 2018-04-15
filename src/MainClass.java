@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainClass {
@@ -38,7 +39,15 @@ public class MainClass {
                 gen = new Congruencias(xc);
                 break;
             case 3:
-                gen = new AdCongruencias();
+                int seednumber;
+                ArrayList xac = new ArrayList();
+                System.out.println("Ingrese cantidad de semillas: ");
+                seednumber = scan.nextInt();
+                for(int j = 0;j<seednumber;j++){
+                    System.out.println("Ingrese valor de X" + j + ": ");
+                    xac.add(scan.nextInt());
+                }
+                gen = new AdCongruencias(xac,seednumber);
                 break;
             case 4:
                 double xm;
@@ -72,7 +81,9 @@ public class MainClass {
 
                 gen = new Fibonacci(v1,v2,a);
                 break;
-            default:    gen = new Fibonacci();
+            default:
+                System.out.println("Selección incorrecta");
+                gen = new Fibonacci();
 
 
 
