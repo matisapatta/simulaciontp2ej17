@@ -30,7 +30,7 @@ public class AdCongruencias extends Generador {
         }
         aux = aux%this.m;
         this.x.add(aux);
-        rand = aux/(this.m-1);
+        rand = (float)aux/(this.m-1);
         this.cant--;
         if(!(rand==((int)this.x.get(contador+seednumber))/this.m-1)||this.cant==0){
             System.out.println(rand);
