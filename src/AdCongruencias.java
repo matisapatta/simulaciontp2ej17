@@ -13,7 +13,7 @@ public class AdCongruencias extends Generador {
         this.contador = 0;
         this.seednumber = seednumber;
         this.m = 100;
-        this.cant = cant;
+        this.cant = seednumber;
     }
 
     public void getNext(){
@@ -24,15 +24,13 @@ public class AdCongruencias extends Generador {
 
         double rand;
         int aux=0;
-
-        for(int i = contador;i<contador+this.seednumber;i++){
-            aux = aux+(int)this.x.get(i);
-        }
+        aux = (int)x.get(contador)+(int)x.get(seednumber-1+contador);
+        contador++;
         aux = aux%this.m;
         this.x.add(aux);
         rand = (double)aux/(this.m-1);
 
-        if(!(rand==((int)this.x.get(contador+seednumber))/this.m-1)||this.cant==0){
+        if(this.cant!=0){
             this.cant--;
             System.out.println(rand);
             calcular();
