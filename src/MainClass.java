@@ -23,6 +23,9 @@ public class MainClass {
 
         selector = scan.nextInt();
 
+        System.out.println("Ingrese cantidad: ");
+        cant = scan.nextInt();
+
         switch (selector){
             case 1:
                 int seed;
@@ -30,13 +33,13 @@ public class MainClass {
                     System.out.println("Ingrese semilla: ");
                     seed = (scan.nextInt());
                 } while(String.valueOf(seed).length()!=2&&String.valueOf(seed).length()!=4);
-                gen = new CuadCent(seed);
+                gen = new CuadCent(seed,cant);
                 break;
             case 2:
                 double xc;
                 System.out.println("Ingrese semilla: ");
                 xc = (scan.nextInt());
-                gen = new Congruencias(xc);
+                gen = new Congruencias(xc,cant);
                 break;
             case 3:
                 int seednumber;
@@ -47,13 +50,13 @@ public class MainClass {
                     System.out.println("Ingrese valor de X" + j + ": ");
                     xac.add(scan.nextInt());
                 }
-                gen = new AdCongruencias(xac,seednumber);
+                gen = new AdCongruencias(xac,seednumber,cant);
                 break;
             case 4:
                 double xm;
                 System.out.println("Ingrese semilla: ");
                 xm = (scan.nextInt());
-                gen = new Multiplicativo(xm);
+                gen = new Multiplicativo(xm,cant);
                 break;
             case 5:
                 int v1,v2,a;
@@ -79,7 +82,7 @@ public class MainClass {
 
                 } while(!isPrime(a));
 
-                gen = new Fibonacci(v1,v2,a);
+                gen = new Fibonacci(v1,v2,a,cant);
                 break;
             default:
                 System.out.println("Selección incorrecta");

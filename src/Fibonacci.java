@@ -1,6 +1,7 @@
 public class Fibonacci extends Generador {
 
     private int v1,v2,a;
+    private int cant;
 
     public Fibonacci(){
         this.v1 = 0;
@@ -8,10 +9,11 @@ public class Fibonacci extends Generador {
         this.a = 0;
     }
 
-    public Fibonacci(int v1, int v2,int a){
+    public Fibonacci(int v1, int v2,int a, int cant){
         this.v1 = v1;
         this.v2 = v2;
         this.a = a;
+        this.cant = cant;
 
     }
 
@@ -27,7 +29,8 @@ public class Fibonacci extends Generador {
             k = -1;
         int v3 = (v1+v2)+k*a;
 
-        if (v3 != v2){
+        if (!(v3 == v2)||(this.cant==0)){
+            this.cant--;
             System.out.println(v3);
             calcular(v2,v3,a);
         }

@@ -2,10 +2,12 @@ public class CuadCent extends Generador {
 
     private int seed;
     private int cifra;
+    private int cant;
 
-    public CuadCent(int seed){
+    public CuadCent(int seed, int cant){
         this.seed = seed;
         this.cifra = String.valueOf(seed).length();
+        this.cant = cant;
     }
 
     public void getNext(){
@@ -26,7 +28,8 @@ public class CuadCent extends Generador {
         }
         auxI = Integer.parseInt(auxS);
 
-        if(auxI!=seed){
+        if(!(auxI==seed||this.cant==0)){
+            cant--;
             System.out.println(auxI);
             calcular(auxI);
         }

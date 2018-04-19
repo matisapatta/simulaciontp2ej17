@@ -5,14 +5,14 @@ public class Congruencias extends Generador {
     private double m;
     private double x;
     private int cant;
-    private double max;
 
-    public Congruencias(double x){
+
+    public Congruencias(double x, int cant){
         this.a = 15;
         this.c = 10;
         this.m = 100;
         this.x = x;
-        this.max = 10;
+        this.cant = cant;
 
     }
 
@@ -23,10 +23,11 @@ public class Congruencias extends Generador {
     public void calcular(double x){
         double x1;
         double rand;
-        this.max--;
+
         x1 = ((this.a*x)+this.c)%m;
         rand = x1/this.m;
-        if(!(rand==x/this.m||this.max==0)){
+        if(!(rand==x/this.m||this.cant==0)){
+            cant--;
             System.out.println(rand);
             calcular(x1);
         }
