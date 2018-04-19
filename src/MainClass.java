@@ -32,14 +32,22 @@ public class MainClass {
                 do{
                     System.out.println("Ingrese semilla: ");
                     seed = (scan.nextInt());
-                } while(String.valueOf(seed).length()!=2&&String.valueOf(seed).length()!=4);
+                } while(false);
+                // while(String.valueOf(seed).length()!=2&&String.valueOf(seed).length()!=4);
+
                 gen = new CuadCent(seed,cant);
                 break;
             case 2:
-                double xc;
+                double xc,_a,m,c;
                 System.out.println("Ingrese semilla: ");
                 xc = (scan.nextInt());
-                gen = new Congruencias(xc,cant);
+                System.out.println("Ingrese acumulador C: ");
+                c = (scan.nextInt());
+                System.out.println("Ingrese parámetro A: ");
+                _a = (scan.nextInt());
+                System.out.println("Ingrese número M: ");
+                m = (scan.nextInt());
+                gen = new Congruencias(xc,cant,_a,c,m);
                 break;
             case 3:
                 int seednumber;

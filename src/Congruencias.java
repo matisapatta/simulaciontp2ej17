@@ -7,10 +7,10 @@ public class Congruencias extends Generador {
     private int cant;
 
 
-    public Congruencias(double x, int cant){
-        this.a = 15;
-        this.c = 10;
-        this.m = 100;
+    public Congruencias(double x, int cant, double a, double c, double m){
+        this.a = a;
+        this.c = c;
+        this.m = m;
         this.x = x;
         this.cant = cant;
 
