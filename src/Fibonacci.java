@@ -34,6 +34,10 @@ public class Fibonacci extends Generador {
             System.out.println(v3);
             calcular(v2,v3,a);
         }
+        if(cant!=0){
+            System.out.println("No se ha podido cumplir la cantidad porque se cumplió el ciclo primero");
+            cant = 0;
+        }
 
     }
 

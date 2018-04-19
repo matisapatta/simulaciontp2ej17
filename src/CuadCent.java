@@ -33,6 +33,10 @@ public class CuadCent extends Generador {
             System.out.println(auxI);
             calcular(auxI);
         }
+        if(cant!=0){
+            System.out.println("No se ha podido cumplir la cantidad porque se cumplió el ciclo primero");
+            cant = 0;
+        }
 
 
 
